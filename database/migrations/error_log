@@ -1,0 +1,52 @@
+[12-Jun-2023 09:03:38 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_05_19_094005_add_order_to_questions_table.php on line 8
+[12-Jun-2023 09:03:38 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_29_081031_add_hide_to_categories_table.php on line 7
+[12-Jun-2023 09:03:38 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_24_092512_add_factor_description_to_examlogic_table.php on line 8
+[12-Jun-2023 09:03:38 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2021_03_27_051523_create_coupon_users_table.php on line 8
+[12-Jun-2023 09:03:40 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_20_100306_create_genders_table.php on line 8
+[12-Jun-2023 09:03:40 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_04_045709_create_exam_images_table.php on line 8
+[12-Jun-2023 09:03:59 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_04_045709_create_exam_images_table.php on line 8
+[12-Jun-2023 09:03:59 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_20_100306_create_genders_table.php on line 8
+[12-Jun-2023 09:04:06 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_05_19_094005_add_order_to_questions_table.php on line 8
+[12-Jun-2023 09:04:06 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2021_03_27_051523_create_coupon_users_table.php on line 8
+[12-Jun-2023 09:04:06 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_24_092512_add_factor_description_to_examlogic_table.php on line 8
+[12-Jun-2023 09:04:06 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_29_081031_add_hide_to_categories_table.php on line 7
+[12-Jun-2023 09:06:40 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_20_100306_create_genders_table.php on line 8
+[12-Jun-2023 09:08:58 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_09_061527_create_examlogic_table.php on line 8
+[12-Jun-2023 09:15:48 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2014_10_12_000000_create_users_table.php on line 8
+[12-Jun-2023 09:40:53 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2021_03_23_053718_create_results_table.php on line 8
+[12-Jun-2023 09:43:11 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2021_03_16_092401_create_categories_table.php on line 8
+[12-Jun-2023 09:43:14 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_16_083243_add_question_category_table.php on line 8
+[12-Jun-2023 09:43:15 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_23_081428_add_is_check_to_examlogic_table.php on line 8
+[12-Jun-2023 10:24:28 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_22_115125_add_operation2_and_comparison2mark_to_examlogic_table.php on line 8
+[12-Jun-2023 10:30:25 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2020_06_14_061904_create_support_attachments_table.php on line 8
+[12-Jun-2023 10:39:37 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_29_114253_add_dob_to_users_table.php on line 8
+[12-Jun-2023 11:11:15 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_29_081031_add_hide_to_categories_table.php on line 7
+[12-Jun-2023 11:11:22 UTC] PHP Fatal error:  Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_03_142319_add_categories_filed_table.php on line 8
+[12-Jun-2023 13:27:12 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2019_08_19_000000_create_failed_jobs_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2019_08_19_000000_create_failed_jobs_table.php on line 7
+[12-Jun-2023 17:12:22 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_20_113544_add_gender_id_to_exams_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2022_04_20_113544_add_gender_id_to_exams_table.php on line 7
+[12-Jun-2023 17:32:29 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2021_03_18_084234_create_coupons_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2021_03_18_084234_create_coupons_table.php on line 7
+[12-Jun-2023 22:44:36 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_08_24_092512_add_factor_description_to_examlogic_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2022_08_24_092512_add_factor_description_to_examlogic_table.php on line 7
+[12-Jun-2023 23:50:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_04_20_100306_create_genders_table.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2022_04_20_100306_create_genders_table.php on line 7
+[13-Jun-2023 01:04:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_11_02_112056_add_order_to__groupfactor.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2022_11_02_112056_add_order_to__groupfactor.php on line 7
+[13-Jun-2023 01:33:59 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Migrations\Migration' not found in /home/com1/scit-test.com/database/migrations/2022_11_02_111634_add_order_to_categories.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/migrations/2022_11_02_111634_add_order_to_categories.php on line 7

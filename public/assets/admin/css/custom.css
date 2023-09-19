@@ -1,0 +1,13 @@
+/*
+    Add Custom css
+*/
+.carousel-control-next, .carousel-control-prev {
+    height: 10% !important;
+    margin: auto !important;
+}
+/*icon spacing*/
+.image-upload .thumb .profilePicPreview .remove-image {
+    top: 4px !important;
+    right: 3px !important;
+    border-radius: 30% !important;
+}

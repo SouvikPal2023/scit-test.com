@@ -1,0 +1,20 @@
+[12-Jun-2023 12:59:50 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/scit-test.com/config/logging.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/config/logging.php on line 20
+[12-Jun-2023 12:59:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/scit-test.com/config/mail.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/config/mail.php on line 16
+[12-Jun-2023 13:44:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/scit-test.com/config/database.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/config/database.php on line 18
+[12-Jun-2023 15:42:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/scit-test.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/config/session.php on line 21
+[12-Jun-2023 20:34:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/com1/scit-test.com/config/hashing.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/config/hashing.php on line 32

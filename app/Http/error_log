@@ -1,0 +1,4 @@
+[12-Jun-2023 17:48:42 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Http\Kernel' not found in /home/com1/scit-test.com/app/Http/Kernel.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/app/Http/Kernel.php on line 7

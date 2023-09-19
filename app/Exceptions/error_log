@@ -1,0 +1,1 @@
+[12-Jun-2023 10:11:30 UTC] PHP Fatal error:  Class 'Illuminate\Foundation\Exceptions\Handler' not found in /home/com1/scit-test.com/app/Exceptions/Handler.php on line 11

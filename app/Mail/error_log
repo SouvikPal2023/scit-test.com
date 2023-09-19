@@ -1,0 +1,2 @@
+[12-Jun-2023 09:40:10 UTC] PHP Fatal error:  Class 'Illuminate\Mail\Mailable' not found in /home/com1/scit-test.com/app/Mail/SmtpMail.php on line 11
+[12-Jun-2023 09:40:30 UTC] PHP Fatal error:  Class 'Illuminate\Mail\Mailable' not found in /home/com1/scit-test.com/app/Mail/SmtpMail.php on line 11

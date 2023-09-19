@@ -1,0 +1,8 @@
+[12-Jun-2023 17:22:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Support\Providers\AuthServiceProvider' not found in /home/com1/scit-test.com/app/Providers/AuthServiceProvider.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/app/Providers/AuthServiceProvider.php on line 8
+[12-Jun-2023 22:20:06 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Support\ServiceProvider' not found in /home/com1/scit-test.com/app/Providers/AppServiceProvider.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/app/Providers/AppServiceProvider.php on line 11

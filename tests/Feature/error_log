@@ -1,0 +1,5 @@
+[12-Jun-2023 06:00:55 UTC] PHP Fatal error:  Class 'Tests\TestCase' not found in /home/com1/scit-test.com/tests/Feature/ExampleTest.php on line 9
+[12-Jun-2023 14:23:09 UTC] PHP Fatal error:  Uncaught Error: Class 'Tests\TestCase' not found in /home/com1/scit-test.com/tests/Feature/ExampleTest.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/tests/Feature/ExampleTest.php on line 8

@@ -1,0 +1,6 @@
+[12-Jun-2023 07:02:15 UTC] PHP Fatal error:  Class 'Illuminate\Database\Seeder' not found in /home/com1/scit-test.com/database/seeds/DatabaseSeeder.php on line 6
+[12-Jun-2023 11:11:31 UTC] PHP Fatal error:  Class 'Illuminate\Database\Seeder' not found in /home/com1/scit-test.com/database/seeds/DatabaseSeeder.php on line 6
+[12-Jun-2023 16:27:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Seeder' not found in /home/com1/scit-test.com/database/seeds/ScoreSeeder.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/seeds/ScoreSeeder.php on line 6

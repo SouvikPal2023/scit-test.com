@@ -1,0 +1,4 @@
+[12-Jun-2023 16:27:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function define() on null in /home/com1/scit-test.com/database/factories/UserFactory.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/com1/scit-test.com/database/factories/UserFactory.php on line 20
