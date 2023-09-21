@@ -1,0 +1,217 @@
+@media (max-width: 1440px) {
+
+}
+
+/*// Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.98px) { 
+
+}
+
+/*// Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.98px) {
+	.banner .banner-grid{
+		grid-template-columns: 100%;
+	}
+	.header-bottom .navbar-brand {
+    width: 18%;
+    padding-left: 10px;
+}
+.header-bottom .navbar-nav {
+    grid-gap: 5px;
+}
+nav .navbar-toggler{
+	background: #fff;
+}
+.header-bottom {
+    padding: 10px 0;
+}
+.login-header .header-contact {
+    display: none;
+}
+.banner .banner-grid .banner-content h4{
+	margin-left: 0;
+	font-size: 35px;
+}
+.banner .banner-grid .banner-content h3{
+	margin-left: 0;
+	font-size: 35px;
+}
+.banner .banner-grid .banner-content p{
+	margin-left: 0;
+	padding-bottom: 40px;
+}
+.banner .banner-grid .banner-content a{
+	margin-left: 0;
+	font-size: 15px;
+}
+.banner .banner-content{
+	padding-left: 0;
+	text-align: center;
+	padding-bottom: 40px;
+    padding-top: 40px;
+}
+.site-footer .footer-bottom .footer-nav{
+	display: flex;
+    grid-gap: 12px;
+    justify-content: center;
+}
+.footer-description p{
+	font-size: 10px;
+}
+#banner-imageM .owl-prev, #banner-imageM .owl-next{
+	color: #fff;
+}
+.intro .intro-content p {
+    font-size: 14px;
+    text-align: center;
+}
+.intro .intro-content{
+	text-align: center;
+}
+.best .best-wrap {
+    grid-template-columns: 100%;
+}
+.sec-head {
+    font-size: 25px;
+    text-align: center!important;
+}
+.site-footer .footer-contact p{
+	font-size: 14px;
+}
+.best .best-wrap .best-wrap-box {
+    height: auto;
+}
+.accordion .card .card-header button.btn-link {
+    font-size: 11px;
+}
+.accordion .card .collapse .card-body p{
+	font-size: 12px;
+}
+#testimonial-slider{
+	padding: 30px 0;
+}
+.faq-testimonial #testimonial-slider .owl-nav {
+    text-align: center;
+}
+.faq-testimonial #testimonial-slider .owl-nav .owl-prev, .faq-testimonial #testimonial-slider .owl-nav .owl-next {
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+}
+.contact-us {
+    background-size: cover;
+    background-position: top center;
+}
+.site-footer .footer-social {
+    justify-content: center;
+}
+.site-footer .footer-contact{
+	justify-content: left;
+}
+.login-wrap{
+	justify-content: center!important;
+}
+}
+
+/*// Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.98px) { 
+	.banner .banner-grid{
+		grid-template-columns: 100%;
+	}
+	.header-bottom .navbar-brand {
+    width: 30%;
+    padding-left: 10px;
+}
+.header-bottom .navbar-nav {
+    grid-gap: 5px;
+}
+nav .navbar-toggler{
+	background: #fff;
+}
+.header-bottom {
+    padding: 10px 0;
+}
+.login-header .header-contact {
+    display: none;
+}
+.banner .banner-grid .banner-content h4{
+	margin-left: 0;
+	font-size: 35px;
+}
+.banner .banner-grid .banner-content h3{
+	margin-left: 0;
+	font-size: 35px;
+}
+.banner .banner-grid .banner-content p{
+	margin-left: 0;
+	padding-bottom: 40px;
+}
+.banner .banner-grid .banner-content a{
+	margin-left: 0;
+	font-size: 15px;
+}
+.banner .banner-content{
+	padding-left: 0;
+	text-align: center;
+	padding-bottom: 40px;
+}
+.site-footer .footer-bottom .footer-nav{
+	display: block;
+}
+#banner-imageM .owl-prev, #banner-imageM .owl-next{
+	color: #fff;
+}
+.intro .intro-content p {
+    font-size: 14px;
+    text-align: center;
+}
+.intro .intro-content{
+	text-align: center;
+}
+.best .best-wrap {
+    grid-template-columns: 100%;
+}
+.sec-head {
+    font-size: 25px;
+    text-align: center!important;
+}
+.best .best-wrap .best-wrap-box {
+    height: auto;
+}
+.accordion .card .card-header button.btn-link {
+    font-size: 11px;
+}
+.accordion .card .collapse .card-body p{
+	font-size: 12px;
+}
+#testimonial-slider{
+	padding: 30px 0;
+}
+.faq-testimonial #testimonial-slider .owl-nav {
+    text-align: center;
+}
+.faq-testimonial #testimonial-slider .owl-nav .owl-prev, .faq-testimonial #testimonial-slider .owl-nav .owl-next {
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+}
+.contact-us {
+    background-size: cover;
+    background-position: top center;
+}
+.site-footer .footer-social {
+    justify-content: center;
+}
+.site-footer .footer-contact{
+	justify-content: left;
+}
+.login-wrap{
+	justify-content: center!important;
+}
+}
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.98px) { 
+    
+}

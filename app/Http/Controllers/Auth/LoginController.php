@@ -265,7 +265,7 @@ class LoginController extends Controller
 
         $notify[] = ['success', 'You have been logged out.'];
 
-        return redirect()->route('user.login')->withNotify($notify);
+        return redirect()->route('home')->withNotify($notify);
 
     }
 

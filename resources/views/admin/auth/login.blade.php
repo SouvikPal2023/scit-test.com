@@ -30,7 +30,7 @@
 @if(@!$is_logout)
     <div class="container">
         <video id="video_tag" style="width: 100vw;height:100vh;object-fit:fill;" muted>
-            <source src="{{URL::asset("public/video/logo_video.mp4")}}" type="video/mp4">
+            <source src="{{URL::asset("video/logo_video.mp4")}}" type="video/mp4">
         Your browser does not support the video tag.
         </video>
         <div class="overlayText">
@@ -38,9 +38,9 @@
         </div>
     </div>
 @endif
-    <div id="section_tag" style="display:none" class="page-wrapper default-version">
+    <div id="section_tag" style="display:block" class="page-wrapper default-version">
 
-        <div class="form-area bg_img" data-background="{{asset('public/assets/admin/images/1.jpg')}}">
+        <div class="form-area bg_img" data-background="{{asset('assets/admin/images/1.jpg')}}">
 
             <div class="form-wrapper">
 

@@ -9,34 +9,34 @@
     <link rel="shortcut icon" type="image/png" href="{{getImage(imagePath()['logoIcon']['path'] .'/favicon.png')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <!-- bootstrap 4  -->
-    <link rel="stylesheet" href="{{ asset('public/assets/admin/css/vendor/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/vendor/bootstrap.min.css') }}">
     <!-- bootstrap toggle css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/bootstrap-toggle.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-toggle.min.css')}}">
     <!-- fontawesome 5  -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/all.min.css')}}">
     <!-- line-awesome webfont -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/line-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/line-awesome.min.css')}}">
     @stack('style-lib')
 
     <!-- flatpickr css links -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     
     <!-- custom select box css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/nice-select.css')}}">
     <!-- code preview css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/prism.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/prism.css')}}">
     <!-- select 2 css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/select2.min.css')}}">
     <!-- jvectormap css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/jquery-jvectormap-2.0.5.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/jquery-jvectormap-2.0.5.css')}}">
     <!-- datepicker css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/datepicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/datepicker.min.css')}}">
     <!-- timepicky for time picker css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/jquery-timepicky.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/jquery-timepicky.css')}}">
     <!-- bootstrap-clockpicker css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/bootstrap-clockpicker.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-clockpicker.min.css')}}">
     <!-- bootstrap-pincode css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/vendor/bootstrap-pincode-input.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-pincode-input.css')}}">
    
     <!-- sweetalert css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" />
@@ -45,10 +45,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
 
     <!-- dashdoard main css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/app.css')}}">
 
     <!-- Custom main css -->
-    <link rel="stylesheet" href="{{asset('public/assets/admin/css/custom.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/admin/css/custom.css')}}">
 
     <style>
         /*  Add Custom css      */
@@ -88,8 +88,9 @@
 </head>
 <body>
 @yield('content')
+@stack('admin-scripts')
 <!-- jQuery library -->
-<script src="{{asset('public/assets/admin/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/jquery-3.6.0.min.js')}}"></script>
 
 <!-- sweetalert js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -98,26 +99,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script> 
 
 <!-- bootstrap js -->
-<script src="{{asset('public/assets/admin/js/vendor/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/bootstrap.bundle.min.js')}}"></script>
 <!-- bootstrap-toggle js -->
-<script src="{{asset('public/assets/admin/js/vendor/bootstrap-toggle.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/bootstrap-toggle.min.js')}}"></script>
 <!-- slimscroll js for custom scrollbar -->
-<script src="{{asset('public/assets/admin/js/vendor/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/jquery.slimscroll.min.js')}}"></script>
 <!-- custom select box js -->
-<script src="{{asset('public/assets/admin/js/vendor/jquery.nice-select.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/jquery.nice-select.min.js')}}"></script>
 @include('admin.partials.notify')
 @stack('script-lib')
-<script src="{{ asset('public/assets/admin/js/nicEdit.js') }}"></script>
+<script src="{{ asset('assets/admin/js/nicEdit.js') }}"></script>
 <!-- code preview js -->
-<script src="{{asset('public/assets/admin/js/vendor/prism.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/prism.js')}}"></script>
 <!-- seldct 2 js -->
-<script src="{{asset('public/assets/admin/js/vendor/select2.min.js')}}"></script>
+<script src="{{asset('assets/admin/js/vendor/select2.min.js')}}"></script>
 <!-- main js -->
 
 <!-- flatpickr js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 
-<script src="{{asset('public/assets/admin/js/app.js')}}"></script>
+<script src="{{asset('assets/admin/js/app.js')}}"></script>
 {{-- LOAD NIC EDIT --}}
 <style type="text/css">
 div#hidefullmain .carousel.slide .carousel-inner.profilePicPreview.imagemultiple {

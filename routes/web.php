@@ -88,6 +88,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     });
 
     Route::middleware(['admin'])->group(function () {
+        //new routes
+        Route::resource('page', PageController::class);
+        Route::resource('testimonial', TestimonialController::class);
+        //end New Routes
         Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::get('profile', 'AdminController@profile')->name('profile');
         Route::post('profile', 'AdminController@profileUpdate')->name('profile.update');
@@ -368,7 +372,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::get('manage-section/{id}', 'PageBuilderController@manageSection')->name('manage.section');
             Route::post('manage-section/{id}', 'PageBuilderController@manageSectionUpdate')->name('manage.section.update');
         });
-
+      
         // DEPOSIT SYSTEM
         Route::name('resources.')->prefix('resources')->group(function(){
             Route::get('/news_letter', 'ResourcesController@news_letter')->name('news_letter');

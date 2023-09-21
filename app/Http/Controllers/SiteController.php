@@ -73,7 +73,7 @@ class SiteController extends Controller
         $data['page_title'] = 'Home';
 
         $data['sections'] = Page::where('tempname',$this->activeTemplate)->where('slug','home')->firstOrFail();
-        return view($this->activeTemplate . 'home', $data);
+        return view($this->activeTemplate . 'frontpage', $data);
 
     }
 
