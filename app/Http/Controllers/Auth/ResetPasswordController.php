@@ -46,7 +46,7 @@ class ResetPasswordController extends Controller
             $notify[] = ['error', 'Invalid token'];
             return redirect()->route('user.password.request')->withNotify($notify);
         }
-        return view(activeTemplate() . 'user.auth.passwords.reset')->with(
+        return view(activeTemplate() . 'user.auth.passwords.resetNew')->with(
             ['token' => $token, 'email' => $email, 'page_title' => 'Reset Password']
         );
     }

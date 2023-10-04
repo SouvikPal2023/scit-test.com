@@ -7,6 +7,10 @@ use App\PasswordReset;
 use App\User;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgetPasswordMail;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class ForgotPasswordController extends Controller
 {
@@ -32,7 +36,7 @@ class ForgotPasswordController extends Controller
     public function showLinkRequestForm()
     {
         $page_title = "Forgot Password";
-        return view(activeTemplate() . 'user.auth.passwords.email', compact('page_title'));
+        return view(activeTemplate() . 'user.auth.passwords.emailNew', compact('page_title'));
     }
 
     public function sendResetLinkEmail(Request $request)
@@ -54,6 +58,7 @@ class ForgotPasswordController extends Controller
 
         $userIpInfo = getIpInfo();
         $userBrowserInfo = osBrowser();
+      
         send_email($user, 'PASS_RESET_CODE', [
             'code' => $code,
             'operating_system' => @$userBrowserInfo['os_platform'],
@@ -61,7 +66,15 @@ class ForgotPasswordController extends Controller
             'ip' => @$userIpInfo['ip'],
             'time' => @$userIpInfo['time']
         ]);
-
+       
+        $data = [
+            'code' => $code,
+            'operating_system' => $userBrowserInfo['os_platform'],
+            'browser' => $userBrowserInfo['browser'],
+            'ip' => $userIpInfo['ip'],
+            'time' => $userIpInfo['time']
+        ];
+        Mail::to($user->email)->send(new ForgetPasswordMail($data));
         $page_title = 'Account Recovery';
         $email = $user->email;
         session()->put('pass_res_mail',$email);
@@ -76,7 +89,7 @@ class ForgotPasswordController extends Controller
             $notify[] = ['error','Opps! session expired'];
             return redirect()->route('user.password.request')->withNotify($notify);
         }
-        return view(activeTemplate().'user.auth.passwords.code_verify',compact('page_title','email'));
+        return view(activeTemplate().'user.auth.passwords.code_verifyNew',compact('page_title','email'));
     }
 
     public function verifyCode(Request $request)

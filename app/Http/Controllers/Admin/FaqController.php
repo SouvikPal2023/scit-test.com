@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Faq;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
 
 class FaqController extends Controller
 {
@@ -14,7 +17,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        $data['faqs'] = Faq::paginate('20');
+        $data['page_title'] = "FAQ List";
+        return view('admin.faq.list', $data);
     }
 
     /**
@@ -24,7 +29,8 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        $data['page_title'] = "Add FAQ";
+        return view('admin.faq.create',$data);
     }
 
     /**
@@ -35,7 +41,20 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $values = $request->validate([
+            "question"=>'required|string|max:255',
+            "answer"=>'required|string|max:1000',  
+        ]);
+        //dd($values);
+        
+
+        $faq = new Faq();
+        $faq->fill($values);
+        $faq->save();
+
+
+        $notify[] = ['success', __('admin_messages.faq.create')];
+        return redirect()->route('admin.faq.index')->with('success', 'Record added successfully!');
     }
 
     /**
@@ -55,9 +74,11 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        //
+        $data['faq'] = $faq;
+        $data['page_title'] = "Edit FAQ";
+        return view('admin.faq.edit', $data);
     }
 
     /**
@@ -67,9 +88,29 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Faq $faq)
     {
-        //
+        $changed = false;
+        $values = $request->validate([
+            "question"=>'required|string|max:255',
+            "answer"=>'required|string|max:1000', 
+        ]);
+
+
+        $faq->fill($values);
+        if ($faq->isDirty()) {
+            $faq->save();
+            $changed = true;
+        }
+
+
+        if (! $changed) {
+            $notify[] = ['warning', __('admin_messages.nochange')];
+            return redirect()->route('admin.faq.index')->with('warning', 'No changes found!');
+        }
+
+        $notify[] = ['success', __('admin_messages.faq.update')];
+        return redirect()->route('admin.faq.index')->with('success', 'Record updated successfully!');
     }
 
     /**
@@ -78,8 +119,28 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        //
+        if (isset($faq)) {
+            $faq->delete();
+        }
+        
+        $notify[] = ['success', __('admin_messages.faq.delete')];
+        return redirect()->route('admin.faq.index')->with('success', 'Record deleted successfully!');
     }
+
+    public function faqStatus(Faq $faq)
+    {
+        if ($faq->status == 'active') {
+            $faq->status = 'inactive';
+        } else {
+            $faq->status = 'active';
+        }   
+
+        $faq->save();
+
+        $notify[] = ['success', 'Question ' . (($faq->status == 'inactive') ? __('admin_messages.disabled') : __('admin_messages.enabled'))];
+        return redirect()->route('admin.faq.index')->with('success', 'Status changed successfully!');
+    }
+
 }

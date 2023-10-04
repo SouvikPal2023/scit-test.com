@@ -11,8 +11,9 @@ use App\Category;
 use App\Exam;
 
 use App\ExamImages;
-
+use App\Admin;
 use App\Page;
+use App\NewPage;
 
 use App\Subject;
 
@@ -29,12 +30,13 @@ use App\SupportTicket;
 use App\SupportMessage;
 
 use App\SupportAttachment;
-
+use App\Contact;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Validator;
 
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactDetail;
 
 
 
@@ -73,6 +75,8 @@ class SiteController extends Controller
         $data['page_title'] = 'Home';
 
         $data['sections'] = Page::where('tempname',$this->activeTemplate)->where('slug','home')->firstOrFail();
+        $newPage=NewPage::where('slug','home')->firstOrFail();
+        $data['content'] = json_decode($newPage->description);
         return view($this->activeTemplate . 'frontpage', $data);
 
     }
@@ -87,7 +91,7 @@ class SiteController extends Controller
 
         $data['sections'] = $page;
 
-        return view($this->activeTemplate . 'pages', $data);
+        return view($this->activeTemplate . 'pagesNew', $data);
 
     }
 
@@ -101,7 +105,7 @@ class SiteController extends Controller
 
         $data['page_title'] = "Contact Us";
 
-        return view($this->activeTemplate . 'contact', $data);
+        return view($this->activeTemplate . 'contactNew', $data);
 
     }
 
@@ -311,7 +315,7 @@ class SiteController extends Controller
 
         $blogElements = Frontend::where('data_keys','blog.element')->latest()->paginate(9);
 
-        return view(activeTemplate().'blog',compact('page_title','blogElements'));
+        return view(activeTemplate().'blogNew',compact('page_title','blogElements'));
 
     }
     public function blogDetails($id,$slug){
@@ -322,7 +326,7 @@ class SiteController extends Controller
 
         $recentblog = Frontend::latest()->where('data_keys','blog.element')->take(10)->get();
 
-        return view($this->activeTemplate.'blogDetails',compact('blog','page_title','recentblog'));
+        return view($this->activeTemplate.'blogDetailsNew',compact('blog','page_title','recentblog'));
 
     }
 
@@ -512,8 +516,9 @@ class SiteController extends Controller
         $page_title = 'Frequently asked questions';
 
         $faqs = Frontend::where('data_keys','faq.element')->get();
+        
 
-        return view($this->activeTemplate.'faq',compact('page_title','faqs'));
+        return view($this->activeTemplate.'faqNew',compact('page_title','faqs'));
 
     }
 
@@ -534,10 +539,10 @@ class SiteController extends Controller
 
     public function howsitsworks()
     {
-
+dd('hhhh');
         $page_title = 'How it Works';
         $howsitsworks = Frontend::where('data_keys','howsitsworks.element')->get();
-        return view($this->activeTemplate.'howsitsworks',compact('page_title','howsitsworks'));
+        return view($this->activeTemplate.'howsitsworksNew',compact('page_title','howsitsworks'));
     }
 
 
@@ -605,6 +610,45 @@ class SiteController extends Controller
     }
 
 
+    public function saveContactDetail(Request $request)
+{
+    $values = $request->validate([
+        "name" => "required|string|max:100",
+        "subject"=>"required|string",
+        "email" => "required|email|max:100",
+        'phone'=>'nullable|string|min:10|max:30',
+        "message" => "nullable|string|regex:/^[\.\w,!?'\s-]*$/|max:500",
+    ]);
+    
+    
+    $contact = new Contact();
+    $contact->name = $request->name;
+    $contact->email = $request->email;
+    $contact->phone = $request->phone;
+    $contact->subject= $request->subject;
+    $contact->message= $request->message;
+    $contact->save();
 
+    $data=[
+        'name'=>$request->name,
+        'email' => $request->email,
+       'phone' => $request->phone,
+       'subject'=> $request->subject,
+        'message'=> $request->message,
+
+    ];
+
+    
+        $admin = Admin::first();
+        $email_to = $admin->email;
+        Mail::to('souvik.pal@3raredynamics.com')->send(new ContactDetail($data));
+    
+   
+
+        return redirect()->back()->with('success', 'Thanks for contacting. We will get back to you soon!');
+    
 }
 
+
+
+}

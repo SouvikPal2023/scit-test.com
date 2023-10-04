@@ -33,11 +33,11 @@ class GeneralSettingController extends Controller
         $request->merge(['registration' => isset($request->registration) ? 1 : 0]);
         $request->merge(['registration_bonus' => isset($request->registration_bonus) ? $request->registration_bonus : 0]);
 
-        $general_setting->update($request->only(['sitename', 'cur_text', 'cur_sym', 'ev', 'en', 'sv', 'sn', 'registration', 'registration_bonus', 'base_color','secondary_color']));
+        $general_setting->update($request->only(['sitename', 'cur_text', 'cur_sym', 'ev', 'en', 'sv', 'sn', 'registration', 'registration_bonus', 'base_color','secondary_color','contact_email','contact_phone','contact_loc','contact_map']));
 
         $notify[] = ['success', 'General Setting has been updated.'];
 
-        return back()->withNotify($notify);
+        return back()->with('success', 'General Setting has been updated.');
     }
 
     public function logoIcon()
