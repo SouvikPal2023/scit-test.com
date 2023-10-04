@@ -452,118 +452,122 @@ img{
     outline: none;
 }
 
-/*...........................
-        accordion
-............................*/
+/*********************faq-page************************/
 
+
+
+.combined-wraper2{
+    position: relative;
+    padding: 60px 0;
+}
+.inner-faq-wrap {
+
+    margin: 10px 0 120px 0;
+
+}
+
+.inner-faq-wrap .heading {
+
+    text-align: center;
+
+    margin-bottom: 60px;
+
+}
+
+.inner-faq-wrap .heading h2 {
+
+    font-size: 50px;
+
+    color: #000;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+
+}
 
 .accordion .card {
     border: none;
-    margin-bottom: 5px;
-    border-radius: 0;
-    background-color: transparent;
-}
-
-.accordion .card:nth-child(1),
-.accordion .card:nth-child(2),
-.accordion .card:nth-child(3) {
-    border-bottom: none !important;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #000 !important;
+    border-radius: 6px !important;
 }
 
 .accordion .card .card-header {
     position: relative;
     transition: 0.4s;
     padding: 0;
+    background-color: #fff;
     border: none;
 }
 
-
-.accordion .card .card-header .mb-0 {
+.accordion .card .card-header .mb-0{
     padding: 0;
-    color: #000;
 }
 
 .accordion .card .card-header button {
-    color: #000;
+    color: #36458d;
     width: 100%;
     text-align: left;
-    padding: 16px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
     text-decoration: none;
-    border-radius: 0;
-    font-weight: 500;
+    border-radius: none;
 }
 
 .accordion .card .card-header button.collapsed {
-    color: #000!important;
-    font-weight: 500;
-    background: #ec3957;
-    background: -moz-linear-gradient(left, #ec3957 0%, #cb2036 50%, #7a1636 100%);
-    background: -webkit-linear-gradient(left, #ec3957 0%,#cb2036 50%,#7a1636 100%);
-    background: linear-gradient(to right, #ec3957 0%,#cb2036 50%,#7a1636 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ec3957', endColorstr='#7a1636',GradientType=1 );
+    background-color: #185D94 !important;
+    color: #fff !important;
 }
-
 .accordion .card .card-header button.btn-link {
-    background: #fff;
+    background-color: #449a1300;
 }
 
 .accordion .card .collapse.show {
-    background-color: #fff;
+    background-color: rgb(234 232 232 / 0%);
     margin-top: 0px;
     position: relative;
 }
-
-.accordion .card .collapsing {
-    background-color: #fff;
-}
-
-.accordion .card .collapsing .card-body p {
+.accordion .card .collapsing .card-body p{
     font-size: 14px;
-    color: #000;
 }
-
-.accordion .card .collapse .card-body p {
+.accordion .card .collapse .card-body p{
     font-size: 14px;
-    margin-bottom: 0;
-    color: #000;
 }
-
-.accordion .card .collapse .card-body {
-    padding: 20px 20px;
-    background-color: #fff;
-}
-
 /*.accordion .card .card-header:hover{
 
     background-color: #c90a67;
 
 }*/
 
-.accordion .card .card-header:hover button {
-    color: #000;
-    font-weight: 500;
+.accordion .card .card-header:hover button{
+
+    color: #36458d;
+
 }
 
-.bs-example {
-    margin: 20px;
-}
+.bs-example{
 
-.accordion .collapsed .fa {
-    background-color: transparent;
-    margin-right: 0;
-    float: right;
-    color: #000;
-    padding: 5px;
-    position: relative;
-}
+        margin: 20px;
 
-.accordion .fa {
-    background-color: transparent;
-    margin-right: 0;
-    float: right;
+    }
+
+    .accordion .fa {
+        margin-right: 0.5rem;
+        float: right;
+        color: #7CB951;
+    }
+
+.btn-link {
+
+    font-weight: 600;
+
     color: #000;
-    padding: 5px;
-    position: relative;
+
+    text-decoration: none;
+
 }
 
 
@@ -583,8 +587,15 @@ img{
 
 
 .form-sec {
-    padding: 15px 15px 25px;
+    padding: 30px;
     text-align: left;
+    box-shadow: 0 0 5px 0 rgba(208, 208, 208, 0.4);
+    background-color: #b5d1dd;
+}
+
+.inner_page_wrap{
+    position: relative;
+    padding: 60px 0;
 }
 
 
@@ -593,22 +604,20 @@ img{
     color: #105878;
 }
 
-/*.rd-mailform1 {
-    margin-top: 30px;
-}*/
 .rd-mailform1 .form-control:focus{
     outline-style: none;
-    box-shadow: none;
 }
 .rd-mailform1 .form-control {
     background-color: #fff;
     border-radius: 0;
     height: 45px;
     width: 100%;
-    border:0;
+    border: 0;
     font-size: 18px;
     padding-left: 25px;
     position: relative;
+    box-shadow: 0 0 5px 0 rgba(208, 208, 208, 0.4);
+    border-radius: 30px;
 }
 .rd-mailform1 input::before{
     position: absolute !important;
@@ -630,26 +639,19 @@ img{
      opacity: 68%;
 }
 .rd-mailform1 textarea {
-    border-radius: 0 !important;
-    border:0;
+    border-radius: 30px !important;
+    border: 0;
     height: 170px !important;
     background-color: #fff !important;
 }
-
- .appointment .contact_submit_btn{
-    display: inline-table;
-    background: #4bc27e;
-    padding: 10px 40px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 0;
-    margin-top: 20px;
+.rd-mailform1 .contact_submit_btn{
+        text-decoration: none;
+    display: inline-block;
+    background: #316a84;
+    padding: 12px 25px;
     color: #fff;
-    border: 0;
-    cursor: pointer;
-    text-transform: uppercase;
-    }
+    border: none;
+}
 
 
 .contact-item {
@@ -689,16 +691,6 @@ img{
 .form-group{
   margin-bottom: 1.5rem;
 }   
-
-
-{
-    font-size: 60px;
-    color: #fff;
-    font-family: 'Spantaran';
-    line-height: 60px;
-    text-transform: uppercase;
-    text-shadow: 2px 3px 5px #00000094;
-}
 
 
 
@@ -1043,3 +1035,295 @@ padding: 0;
 
 
 
+/*........................
+        inner
+..........................*/
+.breadcrumb-wrapper {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    background-image: url(../images/inner-banner.png);
+    background-size: cover;
+    background-position:center;
+    height: 400px;
+    position: relative;
+}
+.breadcrumb-wrapper::after{
+    position: absolute;
+    clear: both;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(6 5 5 / 66%);
+}
+.breadcrumb-wrapper .shell,
+.breadcrumb-wrapper1 .shell,
+.breadcrumb-wrapper2 .shell {
+    position: absolute;
+    clear: both;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.breadcrumb-wrapper .shell h2,
+.breadcrumb-wrapper1 .shell h2,
+.breadcrumb-wrapper2 .shell h2 {
+    font-size: 60px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+}
+
+/*...........................
+        about-inner
+...........................*/
+.about.inner{
+    padding: 50px 0;
+    background: #fff;
+}
+.about.inner .about-wrap .about-wrap-cont p{
+    color: #000;
+    margin-top: 0;
+}
+.about.inner .about-wrap img{
+    float: right;
+    width: 40%;
+    margin-left: 25px;
+}
+.about.inner .about-wrap .about-wrap-cont .heading{
+    margin-bottom: 20px;
+}
+.about.inner .about-wrap .about-wrap-cont .heading h3{
+    font-weight: 600;
+}
+.about.inner .about-wrap .about-wrap-cont .heading h4{
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #2ecc71;
+    display: inline-block;
+    padding: 5px 15px;
+    color: #fff;
+}
+.about.inner .about-wrap .about-wrap-cont .heading h4 i{
+    padding-right: 5px;
+}
+
+
+
+
+
+/*....................
+    service -Inner
+.....................*/
+.featured-service{
+    padding:50px 0;
+}
+.featured-service .service-box {
+    box-shadow: 0px 1px 7px 0px #707070a3;
+    border-radius: 12px;
+}
+.featured-service .service-box .service-box-img{
+    width: 100%;
+}
+
+.featured-service .service-box .service-box-img img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position:center;
+    border-radius: 12px 12px 0px 0px;
+}
+.featured-service .service-box .service-box-content h3{
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.featured-service .service-box .service-box-content h4{
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #2ecc71;
+    display: inline-block;
+    padding: 5px 15px;
+    color: #fff;
+}
+.featured-service .service-box .service-box-content h4 i{
+    padding-right: 5px;
+}
+.featured-service .service-box .service-box-content{
+    padding: 26px 11px 40px;
+}
+.featured-service .service-box .service-box-content p{
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom:30px;
+}
+.featured-service .service-box .service-box-content a{
+    text-decoration: none;
+    color: #f4f4f4;
+    background: #316a84;
+    padding: 16px 0px;
+    display: block;
+    width: 55%;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+
+.share-post-wrap{
+    box-shadow: 0px 1px 7px 0px #707070a3;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 40px;
+}
+.share-post-wrap p {
+    margin-bottom: 0;
+    color: #316a84;
+    font-size: 20px;
+    font-weight: 600;
+}
+.share-post-wrap .header-contact {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0;
+    float: right;
+        padding-left: 20px;
+}
+.share-post-wrap .header-contact li{
+    float: left;
+}
+
+.share-post-wrap .header-contact li a{
+    text-decoration: none;
+    color: #316a84;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.share-post-wrap .header-contact li a i{
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+
+.login-page-form{
+    position: relative;
+    background: linear-gradient(to right, rgba(0,188,235,1) 0%,rgba(255,100,180,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 0;
+}
+.register-page-form{
+    height: 100%;
+}
+/*.login-page-form .login-page{
+    background-color: #316a84;
+}
+.login-page-form .login-page .modal-content{
+    background-color: #316a84;
+}*/
+.login-page-form .login-page .modal-content .form-sec {
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: none;
+}
+.login-page-form .login-page .modal-content .nav-tabs .nav-link.active{
+    color: #fff;
+    background-color: #316a84;
+}
+.login-page-form .login-page .modal-content .modal-title img{
+    width: 15%;
+}
+/*.login-page-form .login-page .modal-content ul{
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.login-page-form .login-page .modal-content ul .nav-item h4{
+    font-weight: 600;
+    margin-bottom: 15px;
+}*/
+.login-page-form .login-page .modal-content .heading{
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+}
+.login-page-form .login-page .modal-content .heading li{
+    list-style-type: none;
+}
+.login-page-form .login-page .modal-content .heading li h4{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.login-page-form .login-page .modal-content .text-left a{
+    float: right;
+}
+.login-page-form .login-page .modal-content .form-sec h5{
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.login-page-form .login-page .modal-content .form-sec input{
+    background-color: #cbf3ff;
+}
+.login-page-form .login-page .modal-content .form-sec select {
+    color: #000;
+    font-size: 14px;
+    opacity: 68%;
+    height: 45px;
+    background-color: #cbf3ff;
+}
+.login-page-form .login-page .modal-content .form-sec select option{
+     color: #000;
+     font-size: 14px;
+}
+.login-page-form .login-page .modal-content .form-sec .contact_submit_btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.login-page-form .login-page .modal-content .rd-mailform1 input::before{
+    display: none;
+}
+.login-page-form .login-page .modal-content .form-sec .form-check .form-check-label{
+     color: #6e7065;
+     font-size: 15px;
+}
+.login-page-form .checkbox-item{
+    text-align: center;
+}
+.login-page-form .checkbox-item a
+{
+    text-decoration: none;
+    color:#316a84;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.reg-email{
+    font-size: 20px;
+}
+
+/* ............................................. 
+                css added by Shubham
+................................................*/
+.body-wrapper
+{
+   background: linear-gradient(to right, rgba(0,188,235,1) 0%,rgba(255,100,180,1) 100%)!important;
+}
