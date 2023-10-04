@@ -8,6 +8,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserVerificationCode;
+use Illuminate\Support\Str;
 
 
 class AuthorizationController extends Controller
@@ -36,14 +39,21 @@ class AuthorizationController extends Controller
             }elseif (!$user->ev) {
                 if (!$this->checkValidCode($user, $user->ver_code)) {
                     $user->ver_code = verificationCode(6);
+                    
                     $user->ver_code_send_at = Carbon::now();
                     $user->save();
-                    send_email($user, 'EVER_CODE', [
-                        'code' => $user->ver_code
-                    ]);
+                    // send_email($user, 'EVER_CODE', [
+                    //     'code' => $user->ver_code
+                    // ]);
+                    $data = [
+                        'code' => $user->ver_code,
+                        
+                    ];
+                    //dd( $data);
+                    Mail::to($user->email)->send(new UserVerificationCode($data));
                 }
                 $page_title = 'Email verification form';
-                return view($this->activeTemplate.'user.auth.authorization.email', compact('user', 'page_title'));
+                return view($this->activeTemplate.'user.auth.authorization.emailNew', compact('user', 'page_title'));
             }elseif (!$user->sv) {
                 if (!$this->checkValidCode($user, $user->ver_code)) {
                     $user->ver_code = verificationCode(6);
@@ -54,7 +64,7 @@ class AuthorizationController extends Controller
                     ]);
                 }
                 $page_title = 'SMS verification form';
-                return view($this->activeTemplate.'user.auth.authorization.sms', compact('user', 'page_title'));
+                return view($this->activeTemplate.'user.auth.authorization.smsNew', compact('user', 'page_title'));
             }elseif (!$user->tv) {
                 $page_title = 'Google Authenticator';
                 return view($this->activeTemplate.'user.auth.authorization.2fa', compact('user', 'page_title'));

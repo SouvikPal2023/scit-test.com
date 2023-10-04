@@ -239,7 +239,7 @@ class QuestionController extends Controller
 
     }
     public function update(Request $request,$id)
-    {   
+    {   //dd($request->all());
         $question = Questions::find($id);
         if($request->choosecategory != 3){
             $request->validate([

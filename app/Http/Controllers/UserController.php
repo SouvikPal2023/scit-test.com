@@ -43,7 +43,7 @@ class UserController extends Controller
                 $cat->where('status',1);
             });
         })->latest()->with('subject.category')->take(8)->get();
-        return view($this->activeTemplate . 'user.dashboard', compact('page_title','totalDeposit','totalTrx','examList'));
+        return view($this->activeTemplate . 'user.dashboardNew', compact('page_title','totalDeposit','totalTrx','examList'));
     }
     public function profile()
     {

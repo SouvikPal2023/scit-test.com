@@ -107,7 +107,7 @@ class LoginController extends Controller
             $is_logout = false;
         }
         $page_title = "Sign In";
-        return view(activeTemplate() . 'user.auth.login', compact('page_title','is_logout'));
+        return view(activeTemplate() . 'user.auth.loginNew', compact('page_title','is_logout'));
 
     }
 
