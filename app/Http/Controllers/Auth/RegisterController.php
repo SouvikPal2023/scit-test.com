@@ -67,7 +67,7 @@ class RegisterController extends Controller
         $countries = Country::orderBy('phonecode', 'asc')->get();
         $info = json_decode(json_encode(getIpInfo()), true);
         $country_code = @implode(',', $info['code']);
-        return view($this->activeTemplate . 'user.auth.register', compact('countries','reference', 'page_title','country_code'));
+        return view($this->activeTemplate . 'user.auth.registerNew', compact('countries','reference', 'page_title','country_code'));
     }
     public function showRegistrationForm()
     {
@@ -75,7 +75,7 @@ class RegisterController extends Controller
         $info = json_decode(json_encode(getIpInfo()), true);
         $countries = Country::orderBy('name', 'asc')->get();
         $country_code = @implode(',', $info['code']);
-        return view($this->activeTemplate . 'user.auth.register', compact('countries','page_title','country_code'));
+        return view($this->activeTemplate . 'user.auth.registerNew', compact('countries','page_title','country_code'));
     }
     /**
      * Get a validator for an incoming registration request.
@@ -158,8 +158,8 @@ class RegisterController extends Controller
             'city' => isset($data['city']) ? $data['city'] : null
         ];
         $user->status = 1;
-        $user->ev = $gnl->ev ? 0 : 1;
-        $user->sv = $gnl->sv ? 0 : 1;
+        $user->ev = $gnl->ev ? 1 : 0;
+        $user->sv = $gnl->sv ? 1 : 0;
         $user->ts = 0;
         $user->tv = 1;
         $user->balance = $gnl->registration_bonus;

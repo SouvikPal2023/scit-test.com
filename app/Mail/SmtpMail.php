@@ -32,6 +32,7 @@ class SmtpMail extends Mailable
     public function build()
     {
         $body = $this->msg;
+        
         return $this->view('partials.email',compact('body'));
     }
 }

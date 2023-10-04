@@ -1028,7 +1028,7 @@ function notify($user, $type, $shortCodes = null)
 
     send_email($user, $type, $shortCodes);
 
-    send_sms($user, $type, $shortCodes);
+        ($user, $type, $shortCodes);
 
 }
 

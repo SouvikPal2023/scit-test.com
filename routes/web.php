@@ -26,6 +26,10 @@ Route::get('migrate', function () {
 Route::get('/controller',function(){
     Artisan::call('make:modal InviteEmail');
 });
+Route::get('/storage-link', function () {
+	Artisan::call('storage:link');
+    return 'Storage Linked';
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,8 +93,17 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware(['admin'])->group(function () {
         //new routes
+        Route::resource('contact', ContactController::class);
         Route::resource('page', PageController::class);
+        Route::patch('page-list/{page}','PageController@change')->name('page.change');
         Route::resource('testimonial', TestimonialController::class);
+        Route::patch('testimonial-status/{testimonial}', 'TestimonialController@testimonialStatus')->name('testimonial.status');
+        Route::resource('faq',FaqController::class);
+        Route::patch('faq-status/{faq}', 'FaqController@faqStatus')->name('faq.status');
+
+        Route::resource('banner',BannerImageController::class);
+        Route::patch('banner-status/{banner}', 'BannerImageController@bannerStatus')->name('banner.status');
+       // Route::put('update-testimonial-text', 'TestimonialController@textUpdate')->name('testimonialText.update');
         //end New Routes
         Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::get('profile', 'AdminController@profile')->name('profile');
@@ -515,6 +528,7 @@ Route::name('user.')->prefix('user')->group(function () {
 
 
 Route::get('/contact', 'SiteController@contact')->name('contact');
+Route::post('/contactUs', 'SiteController@saveContactDetail')->name('contactUs');
 Route::get('/frequently-asked-question', 'SiteController@faq')->name('faq');
 Route::get('/howsitswork', 'SiteController@howsitsworks')->name('howsitsworks');
 Route::post('/contact', 'SiteController@contactSubmit')->name('contact.send');
