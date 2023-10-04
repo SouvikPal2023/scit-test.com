@@ -49,7 +49,8 @@
 
     <!-- Custom main css -->
     <link rel="stylesheet" href="{{asset('assets/admin/css/custom.css')}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css" integrity="sha512-O03ntXoVqaGUTAeAmvQ2YSzkCvclZEcPQu1eqloPaHfJ5RuNGiS4l+3duaidD801P50J28EHyonCV06CUlTSag=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /*  Add Custom css      */
         .carousel-control-next, .carousel-control-prev {
@@ -119,6 +120,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
 
 <script src="{{asset('assets/admin/js/app.js')}}"></script>
+<script src="{{ asset('assetsnew/js/iziToast.js') }}"></script>
+  <script type="text/javascript">
+    (function($){
+
+        @if (Session::has('success'))
+          iziToast.success({
+              message: '{{ Session::get('success') }}',
+              position: "topRight"
+          });
+
+        @elseif(Session::has('error'))
+          iziToast.error({
+              message: '{{ Session::get('error') }}',
+              position: "topRight"
+          });
+
+        @elseif(Session::has('warning'))
+          iziToast.warning({
+              message: '{{ Session::get('warning') }}',
+              position: "topRight"
+          });
+        @endif
+    })(jQuery);
+
+    @if ($errors->any())
+        @php
+            $collection = collect($errors->all());
+            $errors = $collection->unique();
+        @endphp
+
+        @foreach ($errors as $error)
+        iziToast.error({
+            message: '{{ __($error) }}',
+            position: "topRight"
+        });
+        @endforeach
+    @endif
+  </script>
 {{-- LOAD NIC EDIT --}}
 <style type="text/css">
 div#hidefullmain .carousel.slide .carousel-inner.profilePicPreview.imagemultiple {

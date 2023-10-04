@@ -31,13 +31,13 @@
     
     
     <div class="col-xl-6 col-lg-6 col-md-6">
-      {{-- @if(!empty($bannerlists->banner_image)) --}}
-      <img src="{{ isset($bannerlists->banner_image) ? asset('storage/banners/'.$bannerlists->banner_image) : asset('admin_assets/images/default_img.png') }}" width="100" height="100"
-      id="SelectedImg"
-      class="round__custom rounded-circle"
-      title="Banner Image"
-      alt="Banner Image">
-      {{-- @endif --}}
+     
+
+      <img src="{{  isset($bannerlists->banner_image) ? config("app.url").Storage::url($bannerlists->banner_image) : asset('assetsnew/images/default-image.png') }}"
+                id="SelectedImg" class="w-px-100 h-px-100 rounded-circle" title="Banner Image"
+                alt="Banner Image" style="
+    height: 100px;
+">
       
     </div>
   </div>
@@ -51,7 +51,7 @@
     <div class="col-sm-12">
       <div class="form-group">
         <div class="form-line">
-          <textarea rows="4" name="description" class="form-control no-resize Editor" placeholder="Description">{{old('description') ?? ($bannerlists->description ?? '') }}</textarea>
+          <textarea rows="4" name="description" class="form-control no-resize nicEdit" placeholder="Description">{{old('description') ?? ($bannerlists->description ?? '') }}</textarea>
         </div>
       </div>
     </div>
@@ -61,5 +61,10 @@
 
 
 <button type="submit" class="btn btn-primary mr-2">Submit</button>
-<a class="btn btn-dark" href="{{ route('banner.index') }}">Cancel</a>
+<a class="btn btn-dark" href="{{ route('admin.banner.index') }}">Cancel</a>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+@include('admin.common.script')
     

@@ -140,7 +140,10 @@
 </script>   
 @stack('script-lib')
 @stack('script')
-@include('partials.plugins')
+
+
+
+
 @include('admin.partials.notify')
 
 </body>

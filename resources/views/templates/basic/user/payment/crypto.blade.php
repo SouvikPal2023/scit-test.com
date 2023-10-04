@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.master')
+@extends($activeTemplate.'layouts.masterNew')
 @section('content')
     <div class="deposit-area mt-30">
         <div class="panel-card-header bg--primary text-white">

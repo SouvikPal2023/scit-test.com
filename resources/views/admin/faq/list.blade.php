@@ -1,15 +1,15 @@
-@extends('admin.layout.adminMasterLayout')
+@extends('admin.layouts.app')
 
 @section('title', 'FAQ List')
 
-@section('content')
+@section('panel')
 
 <div class="content-wrapper">
 
   {{-- @include('admin.homepageManager.faq.text.edit') --}}
 
   <div>
-    <a href="{{ route('faq.create') }}" class="btn btn-primary font-weight-bold mb-3">+ Add New FAQ</a>
+    <a href="{{ route('admin.faq.create') }}" class="btn btn-primary font-weight-bold mb-3">+ Add New FAQ</a>
   </div>
 
   <div class="row">
@@ -39,19 +39,19 @@
                       </td>
 
                       <td>
-                        {!!  Str::limit($faq->answer, 400) !!}
+                        {!!  Str::limit($faq->answer, 350) !!}
                       </td>
 
                       <td>
                          <div class="dropdown action-label">
                           <a class="btn @if(isset($faq->status) && ($faq->status=='active')) btn-primary @else btn-danger @endif  dropdown-toggle btn-sm text-white" data-bs-toggle="dropdown" aria-expanded="false">
 
-                            <?=(isset($faq->status) && $faq->status=='active')?'<i class="fa fa-dot-circle-o text-success"></i> Active':'<i class="fa fa-dot-circle-o text-danger"></i> Inactive';?>
+                            <?=(isset($faq->status) && $faq->status=='active')?'<i class="las la-battery-full"></i> Active':'<i class="las la-battery-empty"></i> Inactive';?>
 
                             <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu">
-                              <form action="{{route('faq.status', $faq->id)}}" 
+                              <form action="{{route('admin.faq.status', $faq->id)}}" 
                                   method="POST" 
                                   >
                                   @csrf
@@ -69,12 +69,12 @@
 
                      
                       <td>
-                        <a href="{{ route('faq.edit', $faq) }}" class="btn btn-info btn-sm">
-                          <i class='bx bx-edit-alt' ></i> Edit
+                        <a href="{{ route('admin.faq.edit', $faq) }}" class="btn btn-info btn-sm">
+                        <i class="las la-edit text--shadow"></i> 
                         </a>
 
                         <div class="d-inline-block">
-                           <form action="{{route('faq.destroy', $faq->id)}}" 
+                           <form action="{{route('admin.faq.destroy', $faq->id)}}" 
                               method="POST" 
                               >
                               @csrf
@@ -83,7 +83,7 @@
                                     class="btn btn-danger btn-sm Delete" 
                                     style="cursor: pointer;">
                                 
-                                <i class='bx bxs-trash'></i> Delete
+                                    <i class="las la-trash text--shadow"></i> 
                               </button>
                           </form>
                           </div>
@@ -113,71 +113,18 @@
 
 
 
-{{-- <script type="text/javascript" src="{{asset('vendor/sweetalert/sweetalert.all.js')}}"></script>
-<script>
-  $( function() {
-    $('table.FAQ_LIST tbody').sortable({
-      update: function(event,ui) {
-        $(this).children().each( function(index){
-          //console.log(index);
-          if($(this).attr('data-position') !== (index+1)){
-            $(this).attr('data-position', (index+1)).addClass('updated');
-          } 
-        });
-
-        saveNewPositions();
-      }
-    });
-
-    function saveNewPositions() {
-      var positions = [];
-      $('.updated').each(function() {
-          positions.push([$(this).attr('data-index'), $(this).attr('data-position')]);
-          $(this).removeClass('updated');  
-      });
-      //console.log(positions);
-
-      $.ajax({
-        url: "{{route('changeFaqPositions')}}",
-        method: "POST",
-        dataType: "text",
-        data: {
-          update:1,
-          positions: positions,
-          "_token": "{{ csrf_token() }}"
-        },
-        success:function(response){
-          let decode = JSON.parse(response);
-
-          if(decode.status =="success"){
-            return new swal({
-               title: "Success",
-               text:decode.message,
-               icon:"success",
-               timer: 2000,
-            });
-          }
-          else {
-            return new swal({
-               title: "Error",
-               text:decode.message,
-               icon:"error",
-               timer: 2000,
-            });
-          }
-        }
-      });
-
-    }
-
-  });
-</script> --}}
 
 
 
 
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @include('admin.common.deleteConfirm')
 
+<script>
+  $(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+});
 
+  </script>
 @endsection

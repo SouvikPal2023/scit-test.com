@@ -9,7 +9,7 @@
             <div class="col-lg-7 text-center">
                 <div class="section-header">
                     <h2 class="section-title">{{__($content->heading)}}</h2>
-                    <span class="title-border"><i class="las la-book-reader text--base h2"></i></span>
+                    <span class="title-border"><i class="fas fa-book-reader"></i></span>
                 </div>
             </div>
         </div>

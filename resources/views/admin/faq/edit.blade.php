@@ -1,8 +1,8 @@
-@extends('admin.layout.adminMasterLayout')
+@extends('admin.layouts.app')
 
 @section('title', "Edit FAQ")
 
-@section('content')
+@section('panel')
 
 
 
@@ -14,7 +14,7 @@
       </div>
       <div class="card-body">
          <form class="forms-sample" 
-               action="{{route('faq.update', $faq)}}"
+               action="{{route('admin.faq.update', $faq)}}"
                method="POST" 
                autocomplete="off">
             @csrf

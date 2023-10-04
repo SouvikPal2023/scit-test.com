@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.master')
+@extends($activeTemplate.'layouts.masterNew')
 @section('content')
 <style type="text/css">
     .list-logic{
@@ -285,9 +285,9 @@
                                                         @php echo (!empty($msg))? '<li>'. $msg .'</li>':''; @endphp
                                                     @endforeach
                                                 </ul>                                      
-                                        @php endif  @endphp
-                                        <?php  } //factor check
-                                        ?>
+                                        @php endif
+                                     } @endphp
+                                        
                                         @php   $i++; $avg = 0; @endphp
                                     @php }  @endphp
                                 @endforeach

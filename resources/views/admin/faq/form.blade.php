@@ -24,12 +24,12 @@
 
 
 <button type="submit" class="btn btn-primary">{{isset($faq) ? 'Update' : 'Create'}}</button>
-<a class="btn btn-dark" href="{{ route('faq.index') }}">Cancel</a>
+<a class="btn btn-dark" href="{{ route('admin.faq.index') }}">Cancel</a>
 
 
 
 
-@include('admin.common.scripts')
+@include('admin.common.script')
 
 
 
