@@ -3413,7 +3413,7 @@ option {
   padding: 30px;
   transition: all 0.3s;
   min-height: calc(100vh - 100px);
-  margin-top: 45px;
+  margin-top: 0px;
 }
 .show .body-wrapper {
   margin-top: 40px;
@@ -3479,11 +3479,16 @@ option {
   padding-left: 10px;
 }
 .header-user-content span {
-  color: #292929;
+  color: #fff;
   font-size: 15px;
   font-weight: 700;
 }
-
+.navbar-light .navbar-nav .nav-link{
+  color:#fff!important;
+}
+.header-user-icon i{
+  color:#fff;
+}
 .header-user-icon {
   padding-left: 10px;
 }
