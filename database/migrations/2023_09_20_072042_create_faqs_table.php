@@ -15,8 +15,9 @@ class CreateFaqsTable extends Migration
     {
         Schema::create('faqs', function (Blueprint $table) {
             $table->id();
-            $table->text('description')->nullable();
-            $table->text('title')->nullable();
+            $table->string('question');
+            $table->text('answer');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }

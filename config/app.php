@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -51,9 +52,9 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
-
+    
     'url' => env('APP_URL', 'http://localhost'),
-
+    //'url' => 'http://127.0.0.1:8000',
     'asset_url' => env('ASSET_URL', null),
 
     /*

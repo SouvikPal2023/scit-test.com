@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\GeneralSetting;
 use App\Language;
 use App\Page;
+use App\Frontend;
 use App\Extension;
 use Illuminate\Support\ServiceProvider;
 
@@ -34,6 +35,10 @@ class AppServiceProvider extends ServiceProvider
         $viewShare['activeTemplateTrue'] = activeTemplate(true);
         $viewShare['language'] = Language::all();
         $viewShare['pages'] = Page::where('tempname',$activeTemplate)->where('slug','!=','home')->get();
+        $viewShare['footer_pages'] = Page::where('tempname',$activeTemplate)->get();
+        $viewShare['footer_icons'] = Frontend::where('data_keys','footer.element')->get();
+        $viewShare['footer_content'] = Frontend::where('data_keys','footer.content')->get();
+        
         view()->share($viewShare);
         
 
