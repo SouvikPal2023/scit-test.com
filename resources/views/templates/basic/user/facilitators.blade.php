@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.master')
+@extends($activeTemplate.'layouts.masterNew')
 <style>
     .linksParentContainer{
         display: flex;

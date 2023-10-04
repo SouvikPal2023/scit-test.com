@@ -72,6 +72,62 @@
 
                         <div class="row">
 
+<div class="col-md-3">
+
+    <div class="form-group ">
+
+        <label class="form-control-label font-weight-bold"> @lang('Contact Email') </label>
+
+        <input class="form-control form-control-lg" type="text" name="contact_email" value="{{$general->contact_email}}">
+
+    </div>
+
+</div>
+
+<div class="col">
+
+    <div class="form-group ">
+
+        <label class="form-control-label font-weight-bold">@lang('Contact Phone No')</label>
+
+        <input class="form-control form-control-lg" type="text" name="contact_phone" value="{{$general->contact_phone}}">
+
+    </div>
+
+</div>
+
+
+
+<div class="col">
+
+    <div class="form-group ">
+
+        <label class="form-control-label font-weight-bold">@lang('Contact Address') </label>
+        <textarea class="form-control form-control-lg nicEdit" placeholder="Address" name="contact_loc">{{$general->contact_loc?? ""}}</textarea>
+        <!-- <input class="form-control form-control-lg" type="text" name="contact_loc" value="{{$general->contact_loc}}"> -->
+
+    </div>
+
+</div>
+</div>
+<div class="row">
+<div class="col">
+
+    <div class="form-group ">
+
+        <label class="form-control-label font-weight-bold">@lang('Contact Map Iframe link') </label>
+
+        <textarea class="form-control form-control-lg nicEdit" placeholder="Google Map Iframe link*" name="contact_map">{{$general->contact_map?? ""}}</textarea>
+        <!-- <input class="form-control form-control-lg" type="text" name="contact_map" value="{{$general->contact_map}}"> -->
+
+    </div>
+
+</div>
+
+</div>
+
+                        <div class="row">
+
                             <div class="form-group col-md-4">
 
                                 <label class="form-control-label font-weight-bold"> @lang('Site Base Color')</label>

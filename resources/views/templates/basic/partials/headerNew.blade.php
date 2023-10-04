@@ -1,3 +1,9 @@
+@php
+    $footer = getContent('footer.content',true)->data_values;
+    $element = getContent('footer.element',false,'',true);
+    $policies = getContent('policy.element',false,'',true)
+@endphp 
+ 
  <!-----Header Start----->
  <header>
      <div class="header">
@@ -6,9 +12,11 @@
                  <div class="row align-items-center">
                      <div class="col-md-6 col-5">
                          <ul class="header-contact">
-                             <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                             <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                             <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                             @foreach($element as $el )
+                     
+                          <li><a href="{{$el->data_values->link}}">@php echo $el->data_values->icon @endphp</a></li>
+                         
+                          @endforeach
                          </ul>
                      </div>
                      <div class="col-md-6 col-12 d-flex justify-content-end login-wrap">
@@ -38,7 +46,7 @@
      <div class="header-bottom">
          <div class="container">
              <nav class="navbar navbar-expand-lg navbar-light p-0">
-                 <a class="navbar-brand" href="index.html">
+                 <a class="navbar-brand" href="{{route('home')}}">
                      <img src="{{asset('assetsnew/images/logo.png')}}" alt="">
                  </a>
                  <button class="navbar-toggler" type="button" data-toggle="collapse"

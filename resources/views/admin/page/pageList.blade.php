@@ -4,9 +4,7 @@
 @section('panel')
 
 <div class="container-fluid">
-  <div class="block-header">
-    <h2>Page List Management</h2>
-  </div>
+  
   <a href="{{ route('admin.page.create') }}"
     class="btn btn-success btn-sm ml-3 btn btn-success btn-sm ml-3 btn btn-success mb-25">
   + Create Pages</a>
@@ -14,9 +12,7 @@
   <div class="row clearfix mt-5">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="card" style="padding:30px">
-        <div class="header">
-          <h3>PAGES LIST</h3>
-        </div>
+       
 
         <div class="body table-responsive">
           <table class="table table-bordered table-striped table-hover <?php echo count($pages)?'dataTable':'';?>">
@@ -54,18 +50,18 @@
                       <span class="caret"></span>
                     </a>
                     <div class="btn btn-sm ml-3 dropdown-menu" style="background-color: #f0f0f0;">
-                      <!-- <form action="{{route('page.change', $page->id)}}"
+                      <form action="{{route('admin.page.change', $page->id)}}"
                         method="POST"
                         >
                         @csrf
-                        @method('PUT')
+                        @method('PATCH')
                         <button type="submit"
                         class="dropdown-item status-btn btn-sm"
                         style="cursor: pointer; border: none;">
 
                         {!! ($page->status=='active')? "<i class='fa fa-dot-circle-o text-danger'></i> Inactive":"<i class='fa fa-dot-circle-o text-success'></i> Active" !!}
                         </button>
-                      </form> -->
+                      </form>
                     </div>
                   </div>
                 </td>

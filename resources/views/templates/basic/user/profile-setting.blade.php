@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.master')
+@extends($activeTemplate.'layouts.masterNew')
 <style>
     .linksParentContainer{
         display: flex;;
@@ -36,7 +36,8 @@
                                 <div class="profile-thumb-area text-center">
                                     <div class="profile-thumb">
                                         <div class="image-preview bg_img"
-                                             data-background="{{ getImage(imagePath()['profile']['user']['path'].'/'. auth()->user()->image,imagePath()['profile']['user']['size']) }}">
+                                        data-background="{{isset(auth()->user()->image) ? url('/assets/images/user/profile/'.auth()->user()->image) : asset('assetsnew/images/default-image.png') }}">
+                                             <!-- data-background="{{ getImage(imagePath()['profile']['user']['path'].'/'. auth()->user()->image,imagePath()['profile']['user']['size']) }}"> -->
                                         </div>
                                     </div>
                                     <div class="profile-edit">

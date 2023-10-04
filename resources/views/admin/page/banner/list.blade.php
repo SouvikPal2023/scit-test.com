@@ -1,25 +1,17 @@
-@extends('admin.adminMaster')
+@extends('admin.layouts.app')
 @section('title','Page Banners')
 
-@section('content')
+@section('panel')
 
 <div class="container-fluid">
-   <div class="block-header">
-      <h2>Page Banners</h2>
-   </div>
+ 
 
-   <a href="{{ route('banner.create') }}" class="btn btn-success mb-25"> + Create Page Banner</a>
+   <a href="{{ route('admin.banner.create') }}" class="btn btn-success mb-25"> + Create New Banner Image</a>
 
    <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
-            <div class="header">
-                <h2>
-                    BANNER LIST
-                 
-                </h2>
-               
-            </div>
+           
             <div class="body table-responsive">
                 <table class="table table-striped">
                     <thead>
@@ -34,11 +26,8 @@
                         @forelse($bannerlists as $bannerlist)
                         <tr>
                             <td>
-                                <img src="{{  isset($bannerlist->banner_image) ? asset('storage/banners/'.$bannerlist->banner_image) : asset('admin_assets/images/default_img.png') }}" 
-                                    width="50" 
-                                    height="50" 
-                                    alt="Banner Image"
-                                    class="round__custom rounded-circle">
+                                
+                                    <img src="{{  isset($bannerlist->banner_image) ? config("app.url").Storage::url($bannerlist->banner_image) : asset('assetsnew/images/default-image.png') }}" alt="testimonial_image" class="w-px-50 h-px-50 rounded-circle" style="height: 100px;"/>
                             </td>
 
                             <td>
@@ -50,13 +39,13 @@
                             </td>
 
                             <td>
-                                <a href="{{ route('banner.edit',$bannerlist->id) }}"
+                                <a href="{{ route('admin.banner.edit',$bannerlist->id) }}"
                                     class="btn btn-success btn-sm ml-3 btn btn-primary btn-sm ml-3">
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                                    <i class="las la-edit text--shadow"></i> 
                                 </a>
                             
                                 <div style="display: inline-block;">
-                                    <form action="{{route('banner.destroy', $bannerlist->id)}}" 
+                                    <form action="{{route('admin.banner.destroy', $bannerlist->id)}}" 
                                         method="POST" 
                                         >
                                         @csrf
@@ -65,7 +54,7 @@
                                               class="btn btn-danger btn-sm Delete" 
                                               style="cursor: pointer;">
                                           
-                                           <i class="fa fa-trash" aria-hidden="true"></i> Delete
+                                              <i class="las la-trash text--shadow"></i> 
                                         </button>
                                     </form>
                                   </div>
@@ -85,8 +74,17 @@
    
   
 </div>
-@push('admin-scripts')
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 @include('admin.common.deleteConfirm')
-@endpush
+
+<script>
+  $(document).ready(function() {
+    $('.dropdown-toggle').dropdown();
+});
+
+  </script>
+
 @endsection
 

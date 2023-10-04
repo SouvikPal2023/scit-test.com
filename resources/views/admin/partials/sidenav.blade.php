@@ -150,13 +150,13 @@
 
                 </li>
 
-                <li class="sidebar-menu-item  {{menuActive('admin.testimonial')}}">
+                <li class="sidebar-menu-item  {{menuActive('admin.contact')}}">
 
-                    <a href="{{route('admin.testimonial.index')}}" class="nav-link">
+                    <a href="{{route('admin.contact.index')}}" class="nav-link">
 
-                        <i class="menu-icon las la-book-reader"></i>
+                        <i class="menu-icon las la-id-card-alt"></i>
 
-                        <span class="menu-title">@lang('Manage Testimonials')</span>
+                        <span class="menu-title">@lang('Contact Messages')</span>
 
                     </a>
 
@@ -604,12 +604,50 @@
 
 
             <li class="sidebar-menu-item sidebar-dropdown">
-                <a href="javascript:void(0)" class="{{menuActive('admin.frontend.sections*',3)}}">
+                <a href="javascript:void(0)"
+                    class="{{menuActive('admin.frontend.sections*',3)}} {{ menuActive('admin.testimonial*',3)}} {{ menuActive('admin.faq*',3)}}{{ menuActive('admin.banner*',3)}}">
                     <i class="menu-icon la la-html5"></i>
                     <span class="menu-title">@lang('Manage Section')</span>
                 </a>
-                <div class="sidebar-submenu {{menuActive('admin.frontend.sections*',2)}} ">
+                <div
+                    class="sidebar-submenu {{menuActive('admin.frontend.sections*',2)}}{{ menuActive('admin.testimonial*',2)}} {{ menuActive('admin.faq*',2)}}{{ menuActive('admin.banner*',2)}} ">
                     <ul>
+                        <li class="sidebar-menu-item  @if(collect(request()->segments())->last() == 'testimonial') active @endif"">
+
+                            <a href=" {{route('admin.testimonial.index')}}" class="nav-link">
+
+                            <i class="menu-icon las la-dot-circle"></i>
+
+                            <span class="menu-title">@lang('Manage Testimonials')</span>
+
+                            </a>
+
+                        </li>
+
+                        <li class="sidebar-menu-item  @if(collect(request()->segments())->last() == 'faq') active @endif"">
+
+                            <a href=" {{route('admin.faq.index')}}" class="nav-link">
+
+                            <i class="menu-icon las la-dot-circle"></i>
+
+                            <span class="menu-title">@lang('Manage FAQs')</span>
+
+                            </a>
+
+                        </li>
+
+                        <li
+                            class="sidebar-menu-item  @if(collect(request()->segments())->last() == 'banner') active @endif">
+
+                            <a href="{{route('admin.banner.index')}}" class="nav-link">
+
+                                <i class="menu-icon las la-dot-circle"></i>
+
+                                <span class="menu-title">@lang('Manage Banners')</span>
+
+                            </a>
+
+                        </li>
                         @php
                         $lastSegment = collect(request()->segments())->last();
                         @endphp

@@ -1,5 +1,5 @@
 {{-- Start Home Template Banner Section --}}
-{{-- <div class="panel-group content_template template_home template_about template_contact template_faq template_additional template_additionals" id="accordion_home_banner" role="tablist" aria-multiselectable="true">
+{{-- <div class="panel-group content_template template_home template_contact template_faq template_additional template_additionals" id="accordion_home_banner" role="tablist" aria-multiselectable="true">
     <div class="panel panel-success">
        <div class="panel-heading" role="tab" id="headingContent">
           <h4 class="panel-title">
@@ -33,7 +33,7 @@
 </div> --}}
 
 
-<div class="card shadow mb-4 content_template template_home template_about">
+<div class="card shadow mb-4 content_template template_home">
     <!-- Card Header - Accordion -->
     <a href="#collapseHomeBanner" class="d-block card-header py-3" data-toggle="collapse" role="button"
         aria-expanded="true" aria-controls="collapseHomeBanner">
@@ -79,7 +79,7 @@
                         
                             
                         
-                                <textarea name="banner_detail" cols="30" rows="6" class="form-control nicEdit @error('banner_detail') is-invalid @enderror">{!! old('banner_detail', $page_content->banner_detail ?? '') !!}</textarea>
+                                <textarea name="banner_detail"  class="form-control nicEdit @error('banner_detail') is-invalid @enderror">{!! old('banner_detail', $page_content->banner_detail ?? '') !!}</textarea>
                           
 
                        
@@ -109,13 +109,21 @@
                                     value="{{ old('banner_url', $page_content->banner_url ?? '') }}"
                                     placeholder="banner Section Button URL" />
                           
-
+                                   
                        
                     </div>
                     <label class="form-label">Choose Banner Images</label>
                     <div class="form-line">
                     <select class="form-control show-tick" name="banner_id[]" multiple="">
-
+                    @if ($banners->count() > 0)
+                  @foreach ($banners as $add)
+                  @if (!empty($page_content->banner_id) && in_array($add->id, $page_content->banner_id))
+                  <option value="{{ $add->id }}" selected=""> {{ $add->title }} </option>
+                  @else
+                  <option value="{{ $add->id }}"> {{ $add->title }} </option>
+                  @endif
+                  @endforeach
+                  @endif
                     </select>
 </div>
 
@@ -188,6 +196,34 @@
                                 <input type="text" name="youtube_url"
                                     class="form-control @error('youtube_url') is-invalid @enderror"
                                     value="{{ old('youtube_url', $page_content->youtube_url ?? '') }}"
+                                    placeholder="Youtube Section Button URL" />
+                          
+
+                       
+                    </div>
+
+                    <label class="form-label">Button Text2</label>
+                    <div class="form-line">
+                        
+                            
+                                <!-- <input type="file" name="about_background_image" accept="image/*" onchange="showSelectedImagesss(this)" class="form-control @error('about_background_image') is-invalid @enderror" /> -->
+                                <input type="text" name="youtube_button2"
+                                    class="form-control @error('youtube_button2') is-invalid @enderror"
+                                    value="{{ old('youtube_button2', $page_content->youtube_button2 ?? '') }}"
+                                    placeholder="Youtube Section Button Text" />
+                          
+
+                       
+                    </div>
+
+                    <label class="form-label">Button URL2</label>
+                    <div class="form-line">
+                        
+                            
+                                <!-- <input type="file" name="about_background_image" accept="image/*" onchange="showSelectedImagesss(this)" class="form-control @error('about_background_image') is-invalid @enderror" /> -->
+                                <input type="text" name="youtube_url2"
+                                    class="form-control @error('youtube_url2') is-invalid @enderror"
+                                    value="{{ old('youtube_url2', $page_content->youtube_url2 ?? '') }}"
                                     placeholder="Youtube Section Button URL" />
                           
 
@@ -395,14 +431,30 @@
                     <label class="form-label">Choose Testimonials</label>
                     <div class="form-line">
                     <select class="form-control show-tick" name="testimonial_id[]" multiple="">
-
+                    @if ($testimonials->count() > 0)
+                  @foreach ($testimonials as $add)
+                  @if (!empty($page_content->testimonial_id) && in_array($add->id, $page_content->testimonial_id))
+                  <option value="{{ $add->id }}" selected=""> {{ $add->name }} </option>
+                  @else
+                  <option value="{{ $add->id }}"> {{ $add->name }} </option>
+                  @endif
+                  @endforeach
+                  @endif
                     </select>
 </div>
 
 <label class="form-label">Choose FAQs</label>
                     <div class="form-line">
                     <select class="form-control show-tick" name="faq_id[]" multiple="">
-
+                    @if ($faqs->count() > 0)
+                  @foreach ($faqs as $add)
+                  @if (!empty($page_content->faq_id) && in_array($add->id, $page_content->faq_id))
+                  <option value="{{ $add->id }}" selected="">   {!!  Str::limit($add->question,10) !!} </option>
+                  @else
+                  <option value="{{ $add->id }}"> {!! Str::limit($add->question, 100) !!}</option>
+                  @endif
+                  @endforeach
+                  @endif
                     </select>
 </div>
 
@@ -497,7 +549,7 @@ placeholder="Youtube Iframe" />
 
 
 
-<div class="card shadow mb-4 content_template template_about">
+<div class="card shadow mb-4 content_template">
     <!-- Card Header - Accordion -->
     <a href="#collapseHomeFeaturedFrame" class="d-block card-header py-3" data-toggle="collapse" role="button"
         aria-expanded="true" aria-controls="collapseHomeFeaturedFrame">
@@ -562,8 +614,9 @@ placeholder="Youtube Iframe" />
 
 {{-- Start Home Template Product --}}
 
-
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 function showSelectedImagesss(input) {
     if (input.files && input.files[0]) {
@@ -576,3 +629,18 @@ function showSelectedImagesss(input) {
     }
 }
 </script>
+
+<script>
+            $(document).ready(function () {
+                //Select2
+                $(".country").select2({
+                    maximumSelectionLength: 9,
+                });
+                //Chosen
+                $(".country1").chosen({
+                    max_selected_options: 9,
+                });
+
+            
+            });
+        </script>

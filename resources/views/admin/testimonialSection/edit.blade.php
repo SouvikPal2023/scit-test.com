@@ -1,8 +1,8 @@
-@extends('admin.layout.adminMasterLayout')
+@extends('admin.layouts.app')
 
 @section('title', "Edit Testimonial")
 
-@section('content')
+@section('panel')
 
 
 
@@ -14,7 +14,7 @@
       </div>
       <div class="card-body">
          <form class="forms-sample" 
-               action="{{route('testimonial.update', $testimonial)}}"
+               action="{{route('admin.testimonial.update', $testimonial)}}"
                method="POST" 
                autocomplete="off" 
                enctype="multipart/form-data">

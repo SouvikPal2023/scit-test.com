@@ -1,4 +1,4 @@
-@extends($activeTemplate.'layouts.master')
+@extends($activeTemplate.'layouts.examLayout')
 @section('content')
 <style type="text/css">
     body{
@@ -19,7 +19,7 @@
     .body-wrapper{
 
         margin-left: 0 !important;
-        background-color: #00008b;
+        background: linear-gradient(to right, rgba(0,188,235,1) 0%,rgba(255,100,180,1) 100%);
     }
     .quiz-area {
         background-color: white;
@@ -27,7 +27,9 @@
         overflow: hidden;
     }
     .complated{
-        color: #ffff;
+        color: #fff;
+        font-size:22px;
+        font-weight:600;
     }
     .copyright-area p {
         color: #ffff;
@@ -74,10 +76,11 @@
     }
     .progress-bar h5{
         color: #fff;
+        font-size:12px;
     }
-    .questions_box{
+    /* .questions_box{
         background-color: #00008b;
-    }
+    } */
     .copyright-wrapper {
         padding: 30px;
         margin-left: unset; !important;
@@ -149,7 +152,7 @@
         }*/
     }
     .MsoNormal span{
-        font-size: 18pt!important;
+        font-size: 14pt!important;
     }
 </style> 
 <BR>
@@ -244,8 +247,9 @@
                                         <div class="carousel-inner profilePicPreview">
                                         <?php $i =1 ?>
                                         @foreach($qtn->questionimages as $optoinimg)
+                                    
                                             <div class=" carousel-item @if($i ==1)active @endif">
-                                                <img src="{{url(getImage('public/assets/images/question/'.$optoinimg->image,'850x560') )}}" class="d-block w-100" alt="">
+                                                <img src="{{url('assets/images/question/'.$optoinimg->image)}}" class="d-block w-100" alt="">
                                             </div> <?php $i++ ?>
                                         @endforeach
                                         </div>
@@ -278,7 +282,8 @@
                                                         <?php $i =1 ?>
                                                         @foreach($opt->optionsimages as $optoinimg)
                                                             <div class=" carousel-item @if($i ==1)active @endif">
-                                                                <img src="{{url(getImage('public/assets/images/option/'.$optoinimg->image,'850x560') )}}" class="d-block w-100" alt="">
+                                                                
+                                                                <img src="{{url('/assets/images/option/'.$optoinimg->image)}}" class="d-block w-100" alt="">
                                                             </div> <?php $i++ ?>
                                                         @endforeach
                                                     </div>

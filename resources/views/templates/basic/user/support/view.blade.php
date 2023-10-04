@@ -1,11 +1,11 @@
 @php
     if(auth()->check()){
-        $layout = $activeTemplate.'layouts.master';
+        $layout = $activeTemplate.'layouts.masterNew';
         $container = 'container-fluid';
         $headerClass = 'bg--primary';
         $close = 'btn--danger';
     } else {
-        $layout = $activeTemplate.'layouts.frontend';
+        $layout = $activeTemplate.'layouts.homeMaster';
         $container = 'container';
         $headerClass = 'bg--base';
         $close = 'btn--secondary';

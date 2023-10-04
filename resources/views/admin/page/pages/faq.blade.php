@@ -5,44 +5,50 @@
 
 {{-- End About Template Banner Section --}}
 
+{{--FAQ Template Content--}}
+<div class="card shadow mb-4 content_template template_faq">
+    <!-- Card Header - Accordion -->
+    <a href="#collapseHomeBanner12" class="d-block card-header py-3" data-toggle="collapse" role="button"
+        aria-expanded="true" aria-controls="collapseHomeBanner12">
+        <h6 class="m-0 font-weight-bold text-primary">FAQs</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse show" id="collapseHomeBanner12" style="">
+        <div class="card-body">
+
+            <div class="form-group form-float">
+                <div class="form-group form-float">
+
+                    <label class="form-label">Choose FAQs</label>
+                    <div class="form-line">
+                        <select class="form-control show-tick" name="faq_faq_id[]" multiple="">
+                            @if ($faqs->count() > 0)
+                            @foreach ($faqs as $add)
+                            @if (!empty($page_content->faq_faq_id) && in_array($add->id, $page_content->faq_faq_id))
+                            <option value="{{ $add->id }}" selected=""> {!! Str::limit($add->question,10) !!} </option>
+                            @else
+                            <option value="{{ $add->id }}"> {!! Str::limit($add->question, 100) !!}</option>
+                            @endif
+                            @endforeach
+                            @endif
+                        </select>
+                    </div>
 
 
-{{-- Start contact Template Content Section --}}
 
 
-<div class="panel-group content_template template_faq" id="accordion_page" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-warning">
-       <div class="panel-heading" role="tab" id="headingAboutContent">
-          <h4 class="panel-title">
-             <a role="button" data-toggle="collapse" data-parent="#accordion_page" href="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
-            FAQs
-             </a>
-          </h4>
-       </div>
-       {{-- <div class="form-group form-float">
-        <select class="form-control show-tick" name="faq_id[]" multiple="">
-            <option value="" disabled> Please Select Option </option>
-           @if ($faqs->count() > 0)
-           @foreach ($faqs as $faq)
+                </div>
 
-           @if (!empty($page_content->faq_id) && in_array($faq->id, $page_content->faq_id))
-           <option value="{{ $faq->id }}" selected=""> {{ $faq->title }} </option>
-           @else
-           <option value="{{ $faq->id }}"> {{ $faq->title }} </option>
-           @endif
-
-           @endforeach
-           @endif
-        </select>
-    </div> --}}
- </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
- {{-- End Contact Template Content Section --}}
-
+{{--END FAQ Template Content Module--}}
 
 
 
 
- {{-- End About Template --}}
+
+
+
+{{-- End About Template --}}
